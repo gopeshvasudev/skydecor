@@ -1,24 +1,24 @@
-import React, {useRef, useEffect} from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Marquee from "./Marquee";
 
 const Footer = () => {
-  const marqueeRef = useRef(null);
+  // const marqueeRef = useRef(null);
 
-  useEffect(() => {
-    if (marqueeRef.current) {
-      marqueeRef.current.start();
-    }
-    return () => {
-      if (marqueeRef.current) {
-        marqueeRef.current.stop();
-      }
-    };
-  }, []);
+  // useEffect(() => {
+  //   if (marqueeRef.current) {
+  //     marqueeRef.current.start();
+  //   }
+  //   return () => {
+  //     if (marqueeRef.current) {
+  //       marqueeRef.current.stop();
+  //     }
+  //   };
+  // }, []);
 
   return (
     <>
-      <Marquee ref={marqueeRef} text="ELEGANT LAMINATES" mTop></Marquee>
+      <Marquee text="ELEGANT LAMINATES" mTop></Marquee>
       <footer className="p-5 pt-10 flex flex-col sm:flex-wrap sm:flex-row sm:justify-between items-center w-full bg-[#16554a] relative pb-20">
         <img
           className="w-[200px] mb-5 sm:self-start grayscale"

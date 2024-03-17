@@ -6,7 +6,6 @@ import Marquee from "../../Components/Marquee";
 const About = () => {
   const locomotiveScrollRef = useRef(null);
   const marqueeRef = useRef(null);
-  console.log(marqueeRef);
 
   useEffect(() => {
     locomotiveScrollRef.current = new LocomotiveScroll();
