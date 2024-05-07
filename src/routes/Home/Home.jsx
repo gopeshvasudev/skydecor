@@ -8,18 +8,11 @@ import { useRef } from "react";
 const Home = () => {
   const locomotiveScrollRef = useRef(null);
   const marqueeRef = useRef(null);
-  console.log(marqueeRef);
 
   useEffect(() => {
     locomotiveScrollRef.current = new LocomotiveScroll();
-    if (marqueeRef.current) {
-      marqueeRef.current.start();
-    }
     return () => {
       locomotiveScrollRef.current.destroy();
-      if (marqueeRef.current) {
-        marqueeRef.current.stop();
-      }
     };
   }, []);
 
