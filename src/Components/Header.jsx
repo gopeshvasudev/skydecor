@@ -5,8 +5,14 @@ import { useState } from "react";
 const Header = () => {
   const [isHamburgerActive, setIsHamburgerActive] = useState(false);
 
-  function isLinkClicked() {
+  function toggleHamburger() {
     setIsHamburgerActive(!isHamburgerActive);
+  }
+
+  function closeMenu() {
+    if (isHamburgerActive) {
+      setIsHamburgerActive(false);
+    }
   }
 
   return (
@@ -22,13 +28,13 @@ const Header = () => {
         <IoMenu
           size="30px"
           className="lg:hidden text-white"
-          onClick={isLinkClicked}
+          onClick={toggleHamburger}
         />
         <div
           className={`${
             isHamburgerActive
-              ? "nav-right absolute top-16 left-0 h-screen w-full p-5 flex fle-col items-start justify-center text-center bg-[#16554a]"
-              : "p-5 bg-transparent hidden lg:block"
+              ? "nav-right absolute top-16 left-0 h-screen w-full p-5 flex flex-col items-center justify-start text-center bg-[#16554a]"
+              : "p-5 bg-transparent hidden lg:block lg:static"
           }`}
         >
           <ul className="lg:flex lg:items-center lg:gap-8">
@@ -36,7 +42,7 @@ const Header = () => {
               <Link
                 className="hover:border-b-[2px] pb-1 border-white"
                 to="/"
-                onClick={isLinkClicked}
+                onClick={closeMenu}
               >
                 Home
               </Link>
@@ -45,7 +51,7 @@ const Header = () => {
               <Link
                 className="hover:border-b-[2px] pb-1 border-white"
                 to="/about"
-                onClick={isLinkClicked}
+                onClick={closeMenu}
               >
                 About
               </Link>
@@ -54,7 +60,7 @@ const Header = () => {
               <Link
                 className="hover:border-b-[2px] pb-1 border-white"
                 to="/categories"
-                onClick={isLinkClicked}
+                onClick={closeMenu}
               >
                 Categories
               </Link>
@@ -63,7 +69,7 @@ const Header = () => {
               <Link
                 className="hover:border-b-[2px] pb-1 border-white"
                 to="/catalogue"
-                onClick={isLinkClicked}
+                onClick={closeMenu}
               >
                 Catalogue
               </Link>
@@ -72,7 +78,7 @@ const Header = () => {
               <Link
                 className="hover:border-b-[2px] pb-1 border-white"
                 to="/event"
-                onClick={isLinkClicked}
+                onClick={closeMenu}
               >
                 Event
               </Link>
@@ -81,7 +87,7 @@ const Header = () => {
               <Link
                 className="hover:border-b-[2px] pb-1 border-white"
                 to="/contact"
-                onClick={isLinkClicked}
+                onClick={closeMenu}
               >
                 Contact
               </Link>

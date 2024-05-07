@@ -7,7 +7,6 @@ import { useRef } from "react";
 
 const Home = () => {
   const locomotiveScrollRef = useRef(null);
-  const marqueeRef = useRef(null);
 
   useEffect(() => {
     locomotiveScrollRef.current = new LocomotiveScroll();
@@ -88,7 +87,7 @@ const Home = () => {
           </motion.h2>
         </div>
       </section>
-      <Marquee ref={marqueeRef} text="SKY DECOR" />
+      <Marquee text="SKY DECOR" />
       <section className="bg-[#040D12]">
         {sectionData.map((item) => {
           return <Homepage_sections className='image-sections' item={item} key={item.id} />;

@@ -5,8 +5,6 @@ import Marquee from "../../Components/Marquee";
 
 const About = () => {
   const locomotiveScrollRef = useRef(null);
-  const marqueeRef = useRef(null);
-
   useEffect(() => {
     locomotiveScrollRef.current = new LocomotiveScroll();
     return () => {
@@ -61,7 +59,7 @@ const About = () => {
           and customer satisfaction remains steadfast.
         </p>
       </section>
-      <Marquee ref={marqueeRef} text="OUR JOURNEY" />
+      <Marquee text="OUR JOURNEY" />
       <section className="w-full bg-[#010101] overflow-scroll">
         <img
           src="skydecor/extra/journey.jpg"
